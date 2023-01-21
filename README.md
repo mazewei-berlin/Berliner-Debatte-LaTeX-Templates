@@ -76,6 +76,8 @@ Wenn du die Vorlage entpackt hast findest du einen Ordner mit folgender Struktur
 
 Im Ordner "Cover" findest du alle Dateien um ein Cover für den zweiseitigen Druck zu erstellen.
 
+Im Ordner Dokumentation findet ihr eine Kopie dieses Dokuments und die Originalbilder. **Dieser Ordner ist nicht relevant für die Erstellung von Inhalten und kann ignoriert werden!**
+
 Im Ordner "Heft" findest du alle Dateien um die Inhalte des Hefts für den Druck und den Webverkauf vorzubereiten.
 
 ## Anlegen eines neuen Hefts - Ordner Heft
