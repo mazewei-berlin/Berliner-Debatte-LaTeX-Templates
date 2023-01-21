@@ -113,6 +113,11 @@ Hefts eingebunden.
 
 2.  kap1-x.tex: darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen angelegt und mit den Heftinhalten befüllt werden**
 
+### Erzeugen der PDF Datei 
+Wenn du alle Inhalte in der Datei bdi.tex eingefügt hast musst du aus den Inhalten eine PDF Datei erzeugen. Klicke dazu im Editor auf den grünen Button im oberen Bereich. Wenn du den im Screenshot gezeigten grünen Button nimmst wird die PDF Datei gleich angezeigt.
+
+![](./Dokumentation/make-pdf.png)
+
 # Inhalte in Vorlagen einfügen
 
 Um einen Artikel oder eine Rezension zu einem Heft hinzuzufügen sind folgende Schritte notwendig.
@@ -296,6 +301,41 @@ Manchmal sind Tabellen in den Texten enhalten. Tabellen sind ein etwas komplexer
 
 Komplexere Tabellen sollten idealerweise nicht manuell eingegeben werden, da die Wahrscheinlichkeit einen Fehler zu machen recht hoch ist. Es existiert ein Onlinetool \"Table Maker\", dort können Tabellen aus Word oder Excel einfach reinkopiert werden und eine LaTeXÜbersetzung erstellt werden, die dann von dort einfach ins LaTeXDokument kopiert wird. (URL: https://www.latex-tables.com/v3/index.html)
 
+# Beliebte Fehler
+
+Bei der Erstellung von neuen Dokumenten gibt es jede Menge Möglichkeiten etwas falsch zu machen. Die beliebtesten Fehler sind hier aufgelistet.
+
+## Klammer auf und vergessen wieder zu schließen
+
+**Grundsatz: Jede Klammer die geöffnet wird muss auch wieder geschlossen werden!**
+
+{\befehl TEXT so eingegeben endet in einem Fehler. Der LaTeX Editor unterstützt dich dabei diesen Fehler zu bemerken. Nicht geschlossene Klammern werden im Quelltext als Fehler markiert
+
+## Reservierte Sonderzeichen stehen einfach im Text
+
+**Grundsatz: LaTeX kennt XX Zeichen, die im Text vorkommen können aber als "Nicht-Befehl" gekennzeichnet werden müssen** 
+
+Ein & im Text wird von LaTeX als Befehl interpretiert. Wenn & als Textbestandteil interpretiert werden soll musst du das LaTeX sagen. Das machst du durch \\&.
+
+Die Zeichen, die von LaTeX als Befehl interpretiert werden und wie du sie in einem Text verwenden kannst findest du in der folgender Tabelle:
+
+| Bezeichnung            | Ausgabe | LaTeX-Code (außerhalb von Formeln) |
+|------------------------|---------|------------------------------------|
+| Rückstrich (Backslash) | \       | \textbackslash                     |
+| Geschweifte Klammern   | {…}     | \{…\}                              |
+| Dollarzeichen          | $       | \$                                 |
+| Kaufmanns-Und          | &       | \&                                 |
+| Raute                  | #       | \#                                 |
+| Grad                   | °       | \textdegree                        |
+| Zirkumflex             | ^       | \^{}                               |
+| Unterstrich            | _       | \_                                 |
+| Tilde                  | ~       | \textasciitilde oder \~{}          |
+| Prozentzeichen         | %       | \%                                 |
+
+## Falscher Befehl - Syntax Fehler
+Wenn ihr beginnt LaTeX zu schreiben kann es vorkommen, dass ihr Befehle falsch schreibt, z.B. statt \chapter schreibt ihr \Chapter. Das führt dazu, dass LaTeX nicht weiß was gemeint ist und die Übersetzung in das PDF Dokument endet mit einem Fehler.
+
+**Groß- und Kleinschreibung sind relevant!**
 
 [^1]: https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-22.10-x64.exe
 
