@@ -107,7 +107,7 @@ Weiter unten in der gleichen Datei werden die eigentlichen Inhalte des
 Hefts eingebunden.
 
 [Einbinden der Inhalte des Hefts]{.image .placeholder
-original-image-src="Dokumentation/Inhaltseinbindung.png" original-image-title="fig:"}
+original-image-src="/Dokumentation/Inhaltseinbindung.png" original-image-title="fig:"}
 
 1.  toc.tex: Daraus wird das Inhaltsverzeichnis automatisch generiert
 
@@ -149,9 +149,13 @@ normalen Text ohne Bilder und Tabellen richtig zu setzen.
 **Resultat** ist die gesetzte Überschrift eines Editorials.
 
 ::: center
-[image]{.image .placeholder original-image-src="Dokumentation/editorial-headline.png"
+[image]{.image .placeholder original-image-src="/Dokumentation/editorial-headline.png"
 original-image-title=""}
 :::
+
+
+
+
 
 ## Überschriften Artikel
 
