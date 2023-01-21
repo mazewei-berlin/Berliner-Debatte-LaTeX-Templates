@@ -7,8 +7,8 @@ Dokumentation des LaTeX Style für Berliner Debatte Initial.
 
 ## Installation von LaTeX
 
-LaTeXist ein Programm und eine Art der Dokumentauszeichnung.
-LaTeXermöglicht, wissenschaftliche Arbeiten zu verfassen ebenso wie
+LaTeX ist ein Programm und eine Art der Dokumentauszeichnung.
+LaTeX ermöglicht, wissenschaftliche Arbeiten zu verfassen ebenso wie
 Briefe, Präsentationen und auch Zeitschriften, wie die Berliner Debatte
 Initial. Die Idee dahinter ist eine Fokussierung auf die Inhalte zu
 ermöglichen und das Setzen des Textes beinahe vollständig zu
@@ -48,7 +48,7 @@ du LaTeXDateien bearbeiten und kompilieren[^4] kannst. Den Editor musst
 du herunterladen und auf deinem Computer installieren.
 
 [Grundeinstellungen für ein neues Heft festlegen]{.image .placeholder
-original-image-src="texstudio.png" original-image-title="fig:"}
+original-image-src="Dokumentation/texstudio.png" original-image-title="fig:"}
 
 Da LaTeXDateien reine Textdateien sind hilft ein Editor dabei den
 Überblick zu behalten. So werden z.B. die Befehle farblich dargestellt
@@ -91,7 +91,7 @@ In dieser Datei bitte in Zeile 9 ff. den Bereich Konfiguration anpassen
 und in die geschweifte Klammer die Werte für ein neues Heft eintragen.
 
 [Grundeinstellungen für ein neues Heft festlegen]{.image .placeholder
-original-image-src="heftkonfiguration-festlegen.png"
+original-image-src="Dokumentation/heftkonfiguration-festlegen.png"
 original-image-title="fig:"}
 
 1.  Zeile 10: Jahrgang
@@ -107,7 +107,7 @@ Weiter unten in der gleichen Datei werden die eigentlichen Inhalte des
 Hefts eingebunden.
 
 [Einbinden der Inhalte des Hefts]{.image .placeholder
-original-image-src="Inhaltseinbindung.png" original-image-title="fig:"}
+original-image-src="Dokumentation/Inhaltseinbindung.png" original-image-title="fig:"}
 
 1.  toc.tex: Daraus wird das Inhaltsverzeichnis automatisch generiert
 
@@ -149,7 +149,7 @@ normalen Text ohne Bilder und Tabellen richtig zu setzen.
 **Resultat** ist die gesetzte Überschrift eines Editorials.
 
 ::: center
-[image]{.image .placeholder original-image-src="editorial-headline.png"
+[image]{.image .placeholder original-image-src="Dokumentation/editorial-headline.png"
 original-image-title=""}
 :::
 
@@ -161,7 +161,7 @@ original-image-title=""}
 
 ::: center
 [image]{.image .placeholder
-original-image-src="rezensionen-headline.png" original-image-title=""}
+original-image-src="Dokumentation/rezensionen-headline.png" original-image-title=""}
 :::
 
 ## Überschriften Rezensionen
@@ -171,7 +171,7 @@ original-image-src="rezensionen-headline.png" original-image-title=""}
 **Resultat** ist die gesetzte Überschrift einer Rezension.
 
 ::: center
-[image]{.image .placeholder original-image-src="bdichapter.png"
+[image]{.image .placeholder original-image-src="Dokumentation/bdichapter.png"
 original-image-title=""}
 :::
 
@@ -185,7 +185,7 @@ original-image-title=""}
 folgende Absatz wird normal eingerückt.
 
 ::: center
-[image]{.image .placeholder original-image-src="noindent.png"
+[image]{.image .placeholder original-image-src="Dokumentation/noindent.png"
 original-image-title=""}
 :::
 
@@ -198,7 +198,7 @@ original-image-title=""}
 Kursiv ausgegeben werden.
 
 ::: center
-[image]{.image .placeholder original-image-src="fett-kursiv.png"
+[image]{.image .placeholder original-image-src="Dokumentation/fett-kursiv.png"
 original-image-title=""}
 :::
 
@@ -217,11 +217,11 @@ wird.
 
 ::: center
 [image]{.image .placeholder
-original-image-src="nummerierung-endnote.png" original-image-title=""}
+original-image-src="Dokumentation/nummerierung-endnote.png" original-image-title=""}
 :::
 
 ::: center
-[image]{.image .placeholder original-image-src="endnote.png"
+[image]{.image .placeholder original-image-src="Dokumentation/endnote.png"
 original-image-title=""}
 :::
 
@@ -239,7 +239,7 @@ Literaturangaben.
 
 ::: center
 [image]{.image .placeholder
-original-image-src="literaturverzeichnis.png" original-image-title=""}
+original-image-src="Dokumentation/literaturverzeichnis.png" original-image-title=""}
 :::
 
 ## Bilder
@@ -261,7 +261,7 @@ Qualität für den Ausdruck bietet das .eps Format, da es sich hierbei um
 eine skalierbare Vektorgrafik handelt.
 
 ::: center
-[image]{.image .placeholder original-image-src="bilder.png"
+[image]{.image .placeholder original-image-src="Dokumentation/bilder.png"
 original-image-title=""}
 :::
 
@@ -310,19 +310,10 @@ erstellt werden, die dann von dort einfach ins LaTeXDokument kopiert
 wird. (URL: https://www.latex-tables.com/v3/index.html)
 
 ::: center
-[image]{.image .placeholder original-image-src="bilder.png"
+[image]{.image .placeholder original-image-src="Dokumentation/bilder.png"
 original-image-title=""}
 :::
 
-Hier findest du folgende Dateien zum Bearbeiten vor.
-
-1.  formats.tex
-
-2.  bdi.tex
-
-3.  hyphenation.tex
-
-4.  toc.tex
 
 [^1]: https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-22.10-x64.exe
 
