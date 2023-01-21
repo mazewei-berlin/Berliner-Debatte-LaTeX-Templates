@@ -1,6 +1,5 @@
 *.indd
 .DS_Store
-*.pdf
 *.aux
 *.ent
 *.synctex.gz
