@@ -78,7 +78,7 @@ Im Ordner "Cover" findest du alle Dateien um ein Cover für den zweiseitigen Dru
 
 Im Ordner Dokumentation findet ihr eine Kopie dieses Dokuments und die Originalbilder. **Dieser Ordner ist nicht relevant für die Erstellung von Inhalten und kann ignoriert werden!**
 
-Im Ordner "Heft" findest du alle Dateien um die Inhalte des Hefts für den Druck und den Webverkauf vorzubereiten.
+Im Ordner "Heft" findest du alle Dateien um die Inhalte des Hefts für den Druck und den Webverkauf vorzubereiten. Hier sind Dateien enthalten, die du als Beispiel für neue Beiträge nutzen kannst (kap1.tex-kap4.tex).
 
 ## Anlegen eines neuen Hefts - Ordner Heft
 
@@ -113,7 +113,7 @@ Hefts eingebunden.
 
 1.  toc.tex: Daraus wird das Inhaltsverzeichnis automatisch generiert. **Diese Datei muss nicht bearbeitet werden!**
 
-2.  kap1-x.tex: darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen angelegt und mit den Heftinhalten befüllt werden**
+2.  kap1-x.tex, : darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen angelegt und mit den Heftinhalten befüllt werden**
 
 ### Erzeugen der PDF Datei 
 Wenn du alle Inhalte in der Datei bdi.tex eingefügt hast musst du aus den Inhalten eine PDF Datei erzeugen. Klicke dazu im Editor auf den grünen Button im oberen Bereich. Wenn du den im Screenshot gezeigten grünen Button nimmst wird die PDF Datei gleich angezeigt.
@@ -124,9 +124,9 @@ Wenn du alle Inhalte in der Datei bdi.tex eingefügt hast musst du aus den Inhal
 
 Um einen Artikel oder eine Rezension zu einem Heft hinzuzufügen sind folgende Schritte notwendig.
 
-1.  Vorlage Artikel.tex oder Rezension.tex duplizieren und umbenennen
-2.  Einbinden in der Datei bdi.tex
-3.  Einfügen der Inhalte in die neu erstellte Datei
+1.  Vorlage **artikel.tex** oder **rezension.tex** duplizieren und umbenennen, z.B. woods-kempowski-echolot.tex
+2.  Einbinden in der Datei bdi.tex, durch \input{NAME-DER-DATEI.tex}
+3.  Einfügen der Artikel-Inhalte in die neu erstellte Datei
 
 ## Erstellen des Editorials
 Öffne die Datei "editorial.tex" und ersetze den Inhalt mit dem Inhalt des Editorials aus der satzfertigen Datei. Achte auf Kursiv- und Fettsetzung im Word Dokument, diese müsen in LaTeX explizit angegeben werden und verlieren sich durch das Kopieren in die LaTeX Datei. (Siehe weiter unten in dieser Dokumentation)
@@ -141,7 +141,7 @@ Um einen Artikel oder eine Rezension zu einem Heft hinzuzufügen sind folgende S
 
 ## Erstellen eines Artikels
 
-Kopiere die Vorlage Artikel.tex und benenne sie entsprechend um in \"Name-des-Artikels.tex. Anschließend gehe in die Datei bdi.tex und binde die Vorlage wie weiter oben beschrieben ein.
+Kopiere die Vorlage artikel.tex und benenne sie entsprechend um in \"Name-des-Artikels.tex. Anschließend gehe in die Datei bdi.tex und binde die Vorlage wie weiter oben beschrieben ein.
 
 In der Vorlage findest du alle notwendigen Informationen um einen normalen Text ohne Bilder und Tabellen richtig zu setzen.
 
@@ -155,7 +155,7 @@ In der Vorlage findest du alle notwendigen Informationen um einen normalen Text 
 
 ## Erstellen eines Rezension
 
-Kopiere die Vorlage Rezensionen.tex und benenne sie entsprechend um in z.B. rezensionen.tex. Anschließend gehe in die Datei bdi.tex und binde die Vorlage wie weiter oben beschrieben ein.
+Nutze die Vorlage "rezensionen.tex" und übertrage die Inhalte in diese Datei. Anschließend gehe in die Datei bdi.tex und binde die Vorlage wie weiter oben beschrieben ein.
 
 In der Vorlage findest du alle notwendigen Informationen um einen normalen Text ohne Bilder und Tabellen richtig zu setzen.
 
