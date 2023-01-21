@@ -7,52 +7,44 @@ Der Satz der Berliner Debatte Initial erfolgt ab der nächsten Ausgabe mit LaTeX
 
 ## Was ist LaTeX
 
-LaTeX ist ein Programm und eine Art der Dokumentauszeichnung.
-LaTeX ermöglicht, wissenschaftliche Arbeiten zu verfassen ebenso wie
-Briefe, Präsentationen und auch Zeitschriften, wie die Berliner Debatte
-Initial. Die Idee dahinter ist eine Fokussierung auf die Inhalte zu
-ermöglichen und das Setzen des Textes beinahe vollständig zu
-automatisieren.
+LaTeX ist ein Programm und eine Art der Dokumentauszeichnung. LaTeX ermöglicht, wissenschaftliche Arbeiten zu verfassen ebenso wie Briefe, Präsentationen und auch Zeitschriften, wie die Berliner Debatte Initial. Die Idee dahinter ist eine Fokussierung auf die Inhalte zu ermöglichen und das Setzen des Textes beinahe vollständig zu automatisieren.
 
-LaTeX verwendet Befehle zum setzen des Textes. Jeder Befehl beginnt mit
-einen \\gefolgt von einem Wort, z.B.
+LaTeX verwendet Befehle zum setzen des Textes. Jeder Befehl beginnt mit einen \\ gefolgt von einem Wort, z.B.
 
         \chapter
 
 für ein neues Kapitel.
 
-Formatierungen für die Inhalte werden von den Inhalten getrennt abgelegt
-und durch die entsprechenden Befehle auf die Inhalte angewendet, z.B.
+Formatierungen der Inhalte werden von den Inhalten getrennt abgelegt und durch die entsprechenden Befehle auf die Inhalte angewendet, z.B.
 
         \newfontfamily{\chapterfont}{WarnockPro-Regular.otf}
         \renewcommand\huge{\@setfontsize\huge{20}{20}}
         \addtokomafont{chapter}{\chapterfont\huge}
 
-um jede Kapitelüberschrift im gesamten Dokument mit der Schriftart
-Warnock-Pro Regular in Schriftgröße 20pt und einzeiligem Abstand zu
-setzen.
+um jede Kapitelüberschrift im gesamten Dokument mit der Schriftart Warnock-Pro Regular in Schriftgröße 20pt, linksbündig und mit einzeiligem Abstand zu setzen.
 
 ## LaTeX auf deinem Computer installieren
 
-Wichtig ist eine sogenannte LaTeXDistribution herunterzuladen. Unter
-Windows empfiehlt sich Miktex[^1], unter MacOS empfiehlt sich MacTex[^2]
+Wichtig ist eine sogenannte LaTeX Distribution herunterzuladen. Unter Windows empfiehlt sich Miktex[^1], unter MacOS empfiehlt sich MacTex[^2]
 
-Das installieren von LaTeXfunktioniert genauso wie bei jedem anderen
-Programm, Pakete herunterladen und anklicken und dann warten bis die
-Installation fertig ist.
+Das installieren von LaTeX funktioniert genauso wie bei jedem anderen Programm, Pakete herunterladen und anklicken und dann warten bis die Installation fertig ist.
 
 ## LaTeXEditor zum bearbeiten der Dateien und erzeugen von PDF Versionen
 
-Darüber hinaus ist es sinnvoll einen Editor[^3] zu installieren, mit dem
-du LaTeXDateien bearbeiten und kompilieren[^4] kannst. Den Editor musst
-du herunterladen und auf deinem Computer installieren.
+Darüber hinaus ist es sinnvoll einen Editor[^3] zu installieren, mit dem du LaTeX Dateien bearbeiten und kompilieren[^4] kannst. Den Editor musst du herunterladen und auf deinem Computer installieren.
 
-[Grundeinstellungen für ein neues Heft festlegen]{.image .placeholder
-original-image-src="Dokumentation/texstudio.png" original-image-title="fig:"}
+![](./Dokumentation/texstudio.png)
 
-Da LaTeXDateien reine Textdateien sind hilft ein Editor dabei den
-Überblick zu behalten. So werden z.B. die Befehle farblich dargestellt und das Bauen der PDF Datei kann auch aus dem Editor heraus erfolgen.
+Da LaTeX Dateien reine Textdateien sind hilft ein Editor dabei den Überblick zu behalten. So werden z.B. die Befehle farblich dargestellt und das Bauen der PDF Datei kann auch aus dem Editor heraus erfolgen.
 Ausserdem sieht man auf der linken Seite im Editor alle Dateien, die zum Projekt gehören.
+
+### Basiskonfiguration des Editors
+
+TeX-Studio hat viele Einstellungen. Fast alle Einstellungen können nach der Installation so bleiben wie sie im Standard sind. 
+
+Für die Erzeugung der Berliner Debatte muss nur eine Einstellung geändert werden. Die PDF Datei der Berliner Debatte wird mit dem LaTeX Compiler **LuaLaTeX** erzeugt. Öffne die Einstellungen von TeX - Studio und klicke auf "Erzeugen". Dort wähle **LuaLaTeX** als Standard Compiler aus.
+
+![](./Dokumentation/lualatex.png)
 
 # Berliner Debatte in LaTeX setzen
 
@@ -62,8 +54,7 @@ Um ein neues Heft zu setzen benötigst du alles im oberen beschriebene, das mach
 
 Alle Vorlagen sind in einem öffentlich zugänglichen Speicher abgelegt. Die Ablage in diesem Speicher unterstützt die effiziente Verbesserung der Vorlagen, da sie alle Veränderungen an den Dateien mitspeichert und eine effiziente Zusammenarbeit bei der Verbeserung der Vorlagen ermöglicht. Außerdem können so auf einfache Weise weitere Personen in den Vorlagenbesserungsprozess eingebunden werden.
 
-Um ein neues Heft zu erstellen gehe bitte auf [github.com](https://github.com/mazewei-berlin/Berliner-Debatte-LaTeX-Templates/#berliner-debatte-latex-templates) und lade dir
-alle Vorlagen herunter. 
+Um ein neues Heft zu erstellen gehe bitte auf [github.com](https://github.com/mazewei-berlin/Berliner-Debatte-LaTeX-Templates/#berliner-debatte-latex-templates) und lade dir alle Vorlagen herunter. 
 
 ![](./Dokumentation/download-templates.png)
 
@@ -73,13 +64,11 @@ Klicke auf den grünen Button "Code" und dann "Download ZIP". Ein Zip Archiv wir
 
 Entpacke den Ordner durch anklicken und starte den LaTeXEditor. Öffne die Dateien, wie du es von Word oder Excel kennst.
 
-
 ### Struktur der Vorlage
 
 Wenn du die Vorlage entpackt hast findest du einen Ordner mit folgender Struktur
 
 ![](./Dokumentation/struktur-nach-entpacken.png)
-
 
 1. Cover
 2. Dokumentation
@@ -89,21 +78,21 @@ Im Ordner "Cover" findest du alle Dateien um ein Cover für den zweiseitigen Dru
 
 Im Ordner "Heft" findest du alle Dateien um die Inhalte des Hefts für den Druck und den Webverkauf vorzubereiten.
 
-#### Anlegen eines neuen Hefts - Ordner Heft
+## Anlegen eines neuen Hefts - Ordner Heft
 
 Um ein neues Heft anzulegen öffne im Ordner "Heft" die Datei "bdi.tex". Im Editor siehst du dann automatisch alle Dateien, die für die Inhaltserstellung sind in der rechten Seitenleiste.
 
 ![](./Dokumentation/tex-studio-bdi-tex.png)
 
 >---
-> #### Wichtig! 
+> ### Wichtig! 
 >
 > **Bitte die Datei "formats.tex" nicht bearbeiten** 
 > da diese alle Standardformatierungen enthält
 >    
 >---
 
-###### configuration.tex
+### configuration.tex
 
 In der Datei "configuration.tex" werden die Grundeinstellungen für ein neues Heft vorgenommen. 
 
@@ -113,7 +102,7 @@ Bitte gib die enstprechenden Werte in die geschweifte Klammer ein.
 
 Aus den hier eingetragenen Werten ergibt sich automatisch die Ausgabe in den Kopfzeilen der einzelnen Seiten.
 
-##### bdi.tex
+### bdi.tex
 
 Nachdem du die Grundeinstellungen wie oben beschrieben vorgenommen hast gehe zurück in die Datei bdi.tex. Weiter unten in der gleichen Datei werden die eigentlichen Inhalte des
 Hefts eingebunden.
@@ -124,7 +113,7 @@ Hefts eingebunden.
 
 2.  kap1-x.tex: darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen angelegt und mit den Heftinhalten befüllt werden**
 
-# Inhalte einfügen
+# Inhalte in Vorlagen einfügen
 
 Um einen Artikel oder eine Rezension zu einem Heft hinzuzufügen sind folgende Schritte notwendig.
 
@@ -170,6 +159,33 @@ In der Vorlage findest du alle notwendigen Informationen um einen normalen Text 
 **Resultat** ist die gesetzte Überschrift einer Rezension.
 
 ![](./Dokumentation/bdichapter.png)
+
+# Cover erstellen
+
+Um das Cover eines neuen Heftes aus einer Vorlage zu erstellen gehe bitte in den Ordner "Cover" im entpackten ZIP-Archiv (siehe weiter oben).
+
+![noindent](./Dokumentation/cover-folder.png)
+
+## Grundeinstellungen für das Cover
+
+Öffne die Datei configuration.tex und gib alle Werte für das neue Heft ein. Das Verfahren ist analog zum Erstellen eines Heftes.
+
+![noindent](./Dokumentation/cover-basic-conf.png)
+
+Du kannst bis 5 Autoren für das Front-Cover eintragen. 
+
+## Angabe der Autoren
+Öffne die Datei authors.tex und trage die Autoren im richtigen Format ein. Das Format setzt sich zusammen aus 
+1. Fettdruck Name des Autors {\sebf NAME DES AUTORS + TITEL}
+2. Zeilenumbruch \\\
+3. Weitere Angaben zum Autor
+4. Jede Autorenzeile muss in geschweifte Klammern gesetzt werden
+
+![noindent](./Dokumentation/autoren-anlegen.png)
+
+## Ausgabe des Covers als PDF Datei
+
+
 
 # Textsatzthemen für alle Inhalte
 Im Folgenden werden generelle Regeln für den Textsatz im BDI LaTeX Style erläutert. Diese gelten für alle Inhalte!
