@@ -1,9 +1,7 @@
 # Berliner Debatte LaTeX Templates
- Vorlagen für den Satz eines Heftes der Berliner Debatte mit LaTeX
+**Dokumentation des LaTeX Style für Berliner Debatte Initial.**
 
-Dokumentation des LaTeX Style für Berliner Debatte Initial.
-
-# Anlegen eines neuen Hefts
+# Einführung in das Setzen eines Hefts der Berliner Debatte Initial
 
 Der Satz der Berliner Debatte Initial erfolgt ab der nächsten Ausgabe mit LaTeX. 
 
