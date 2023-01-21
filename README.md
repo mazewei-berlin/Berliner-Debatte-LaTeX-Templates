@@ -106,6 +106,8 @@ auf dem Buchrücken und in den Kopfzeilen der einzelnen Seiten.
 Weiter unten in der gleichen Datei werden die eigentlichen Inhalte des
 Hefts eingebunden.
 
+![](./Dokumentation/Inhaltseinbindung.png)
+
 [Einbinden der Inhalte des Hefts]{.image .placeholder
 original-image-src="/Dokumentation/Inhaltseinbindung.png" original-image-title="fig:"}
 
@@ -148,6 +150,8 @@ normalen Text ohne Bilder und Tabellen richtig zu setzen.
 
 **Resultat** ist die gesetzte Überschrift eines Editorials.
 
+![](./Dokumentation/editorial-headline.png)
+
 ::: center
 [image]{.image .placeholder original-image-src="/Dokumentation/editorial-headline.png"
 original-image-title=""}
@@ -163,10 +167,7 @@ original-image-title=""}
 
 **Resultat** ist die gesetzte Überschrift eines Artikels.
 
-::: center
-[image]{.image .placeholder
-original-image-src="Dokumentation/rezensionen-headline.png" original-image-title=""}
-:::
+![](./Dokumentation/rezensionen-headline.png)
 
 ## Überschriften Rezensionen
 
@@ -174,10 +175,7 @@ original-image-src="Dokumentation/rezensionen-headline.png" original-image-title
 
 **Resultat** ist die gesetzte Überschrift einer Rezension.
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/bdichapter.png"
-original-image-title=""}
-:::
+![](./Dokumentation/bdichapter.png)
 
 ## Absätze ohne Einrückung
 
@@ -188,10 +186,7 @@ original-image-title=""}
 **Resultat** ist das der Absatz nicht eingerückt wird. Der darauf
 folgende Absatz wird normal eingerückt.
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/noindent.png"
-original-image-title=""}
-:::
+![noindent](/Users/matthias/Documents/privat/initial/BDI-Template/Berliner-Debatte-LaTeX-Templates/Dokumentation/noindent.png)
 
 ## Fettdruck und Kursivschrift
 
@@ -201,10 +196,13 @@ original-image-title=""}
 **Resultat** ist das die Worte in der Klammer nach dem Befehl Fett oder
 Kursiv ausgegeben werden.
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/fett-kursiv.png"
-original-image-title=""}
-:::
+
+
+![](./Dokumentation/fett-kursiv.png)
+
+
+
+
 
 ## Endnoten
 
@@ -216,18 +214,11 @@ original-image-title=""}
         Genehmigung des Verlags.}
 
 **Resultat** ist das an der Stelle wo die Endnote im Text eingefügt
-wurde ein Nummer erscheint und am Ende des Textes die Endnote ausgegeben
-wird.
+wurde ein Nummer erscheint und am Ende des Textes die Endnote ausgegeben wird.
 
-::: center
-[image]{.image .placeholder
-original-image-src="Dokumentation/nummerierung-endnote.png" original-image-title=""}
-:::
+![](./Dokumentation/nummerierung-endnote.png)
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/endnote.png"
-original-image-title=""}
-:::
+![](./Dokumentation/endnote.png)
 
 ## Bibliografie
 
@@ -241,10 +232,7 @@ original-image-title=""}
 **Resultat** ist eine fortlaufende und unnummerierte Liste der
 Literaturangaben.
 
-::: center
-[image]{.image .placeholder
-original-image-src="Dokumentation/literaturverzeichnis.png" original-image-title=""}
-:::
+![](./Dokumentation/literaturverzeichnis.png)
 
 ## Bilder
 
@@ -264,10 +252,7 @@ Die Formate der Bilder sollten .png, .jpg oder .eps sein. Die Beste
 Qualität für den Ausdruck bietet das .eps Format, da es sich hierbei um
 eine skalierbare Vektorgrafik handelt.
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/bilder.png"
-original-image-title=""}
-:::
+![](./Dokumentation/bilder.png)
 
 ## Tabellen
 
@@ -313,11 +298,6 @@ Word oder Excel einfach reinkopiert werden und eine LaTeXÜbersetzung
 erstellt werden, die dann von dort einfach ins LaTeXDokument kopiert
 wird. (URL: https://www.latex-tables.com/v3/index.html)
 
-::: center
-[image]{.image .placeholder original-image-src="Dokumentation/bilder.png"
-original-image-title=""}
-:::
-
 
 [^1]: https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-22.10-x64.exe
 
@@ -325,6 +305,4 @@ original-image-title=""}
 
 [^3]: https://www.texstudio.org/ Download für Windows oder Mac
 
-[^4]: Aus dem Textdokument das Heft erzeugen, ähnlich dem Übersetzen
-
-    eines Textes von einer Sprache in eine andere Sprache
+[^4]: Aus dem Textdokument das Heft erzeugen, ähnlich dem Übersetzen eines Textes von einer Sprache in eine andere Sprache
