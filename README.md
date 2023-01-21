@@ -5,6 +5,8 @@ Dokumentation des LaTeX Style für Berliner Debatte Initial.
 
 # Anlegen eines neuen Hefts
 
+Der Satz der Berliner Debatte Initial erfolgt ab der nächsten Ausgabe mit LaTeX. 
+
 ## Was ist LaTeX
 
 LaTeX ist ein Programm und eine Art der Dokumentauszeichnung.
