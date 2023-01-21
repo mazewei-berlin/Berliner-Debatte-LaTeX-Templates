@@ -1,0 +1,78 @@
+%BDI colors 
+\definecolor{bdiwhite}{HTML}{E4DFC6}
+\definecolor{bdired}{HTML}{AB041E}
+
+%Buchrücken
+\newbookcovercomponenttype{center rotate}{
+    \vfill
+    \centering
+    \rotatebox[origin=c]{90}{#1}
+    \vfill
+}
+
+%wie groß ist ein großer Zeilenumbruch
+\setlength{\bigskipamount}{0.3cm}
+
+%schriftart einbinden
+\usepackage{fontspec}
+\setmainfont{Arial Black}
+\newfontfamily\myarialfont{Arial}
+\newfontfamily\mywarnockfont{WarnockPro-Regular.otf}
+\newfontfamily\mywarnochsemibold{WarnockPro-Semibold.otf}
+\newcommand{\sebf}{\mywarnochsemibold}
+%ISBN Barcode
+\usepackage[ISBN=978-3-947802-97-5,SC3]{ean13isbn}
+
+%Berliner Debatte Initial Schriftzug
+\newcommand{\bdilogofnt}{\fontsize{44pt}{55pt}\selectfont}
+\newcommand{\bdilogo}[1]{\bdilogofnt\bfseries #1}
+
+%volume rot
+\newcommand{\bdivolumefnt}{\fontsize{10pt}{10pt}}
+\newcommand{\bdivolume}[1]{\bdivolumefnt\myarialfont\selectfont #1}
+
+%Beiträge auf Cover
+\newcommand{\bdicoverfnt}{\fontsize{14pt}{14pt}}
+\newcommand{\bdicover}[1]{\bdicoverfnt\myarialfont\selectfont #1}
+
+%Nummer der Ausgabe
+\newcommand{\bdinumberfnt}{\fontsize{65pt}{65pt}}
+\newcommand{\bdinumber}[1]{\bdinumberfnt\bfseries #1}
+
+%Buchrücken
+\newcommand{\bdispinefnt}{\fontsize{14pt}{14pt}}
+\newcommand{\bdispine}[1]{\bdispinefnt\myarialfont\selectfont #1}
+
+%Rückseite cover
+\newcommand{\bdibackfnt}{\fontsize{10pt}{12pt}}
+\newcommand{\bdiback}[1]{\bdibackfnt\myarialfont\selectfont #1}
+
+%Innenseite vorn
+\newcommand{\bdiautorfnt}{\fontsize{20pt}{20pt}}
+\newcommand{\bdiinnerfont}[1]{\bdiautorfnt\mywarnockfont\selectfont #1}
+
+%Innenseite hinten
+\newcommand{\bdiinnerbackfnt}{\fontsize{10pt}{10pt}}
+\newcommand{\bdiinnerbackfont}[1]{\bdiinnerbackfnt\mywarnockfont\selectfont #1}
+
+%
+% LISTEN der autoren
+%
+\makeatletter
+\newenvironment{authordescription}{%
+    \@nameuse{fontitem\romannumeral\the\@itemdepth}
+
+	\begin{description}
+}{%
+	\end{description}
+}
+\makeatother
+\newcommand{\fontitem}{\fontsize{14pt}{16pt}}
+\usepackage{enumitem}
+
+\usepackage{multicol}
+\setlength{\columnsep}{5mm}
+
+
+%debug
+\usepackage{boxedminipage2e}

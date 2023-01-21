@@ -1,0 +1,176 @@
+\documentclass[
+    coverwidth=160mm,
+    coverheight=227mm,
+    spinewidth=9mm,
+    markcolor=black,
+    marklength=8mm,
+    trimmed=true,
+    %pagecolor=blue
+    ]
+    {bookcover}
+\usepackage{lipsum}
+\input formats.tex
+
+%
+% Grundkonfiguration des Heftes einbeziehen
+% Titel des Heftes, Nummer und Jahrgang, Autoren & Titel auf 
+% Frontcover etc. pp.
+\input configuration.tex
+
+
+\begin{document}
+    %Aussenseite
+    \begin{bookcover}
+        %Lineale
+        %\bookcovercomponent{ruler}{front}{,lowerright,green}
+        \begin{bookcoverelement}{color}{bg whole}
+        bdiwhite
+        \end{bookcoverelement}
+        
+        \begin{bookcoverelement}{normal}{front}[8mm,8mm,8mm,8mm]
+            \hrule
+            \begin{center}
+                {\bdilogo Berliner Debatte\\Initial\par}
+            \end{center}
+            \hrule
+            \begin{center}
+                \vspace{10pt}
+                {\bdinumber \color{bdired} 3}
+                \vspace{10pt}
+            \end{center}
+       
+            \par\noindent\rule{72mm}{0.4pt}\\
+            {\bdivolume{\color{bdired} {33. Jg. 2022}}}
+            \begin{center}
+                \bdicover {\bfseries \bdiTitle}
+            \end{center}
+            \bigskip
+            
+            \hspace{72mm}\noindent\rule{72mm}{0.4pt}\\\bigskip
+            \hfill{\bdivolume{\autorEins}}
+            \begin{center}
+                \bdicover \artikelEins
+            \end{center}
+            \bigskip
+
+            \par\noindent\rule{72mm}{0.4pt}\\
+            {\bdivolume{\autorZwei}}
+            \begin{center}
+                \bdicover \artikelZwei
+            \end{center}
+            \bigskip
+
+            \hspace{72mm}\noindent\rule{72mm}{0.4pt}\\\bigskip
+            \hfill{\bdivolume{\autorDrei}}
+            \begin{center}
+                \bdicover \artikelDrei
+            \end{center}
+            \bigskip
+
+            \par\noindent\rule{72mm}{0.4pt}\\
+            {\bdivolume{\autorVier}}
+            \begin{center}
+                \bdicover \artikelVier 
+            \end{center}
+            \bigskip
+
+            \hspace{72mm}\noindent\rule{72mm}{0.4pt}\\\bigskip
+            \hfill{\bdivolume{\autorFuenf}}
+            \begin{center}
+                \bdicover \artikelFuenf
+            \end{center}
+            
+        \end{bookcoverelement}
+
+        % ISBN & Welttrendslogo + Anschrift + Abo
+        \begin{bookcoverelement}{normal}{back}[8mm,8mm,8mm,8mm]
+            {\bdiback{
+                    \begin{minipage}[t][2cm]{73mm}
+                        \parbox[t][][t]{7cm}{\includegraphics[scale=.5]{welttrends.png}\\\bigskip
+                        {\large www.welttrends.de}}
+                    \end{minipage}      
+                    \begin{minipage}[t]{72mm}
+                        \begin{flushright}
+                            \fbox{\parbox[t][][t]{5cm}{\EANisbn}}
+                        \end{flushright}
+                    \end{minipage} 
+                    \begin{minipage}[t][2cm]{72mm}
+                        \parbox[t][][t]{4.5cm}{
+                                \begin{flushleft}
+                                    Berliner Debatte Initial\\
+                                    c/o WeltTrends \\
+                                    Medienhaus Babelsberg \\
+                                    August-Bebel-Straße 26-53 \\
+                                    D-14482 Potsdam
+                                \end{flushleft}
+                                }
+                    \end{minipage}      
+                    \begin{minipage}[t]{72mm}
+                        \begin{flushright}          
+                            \parbox[t][][t]{4.5cm}{
+                                \begin{flushright}
+                                    ISBN 978-3-947802-97-5 \\
+                                    ISSN 0863-4564 \\
+                                    Einzelheft 15 €, \\
+                                    Jahresabo 40 €, \\
+                                    Institutionen 45 €, \\
+                                    ermäßigt 30 € \\
+                                    www.berlinerdebatte.de
+                                \end{flushright}
+                                }
+                        \end{flushright}
+                    \end{minipage} 
+                    \begin{center}
+                        \includegraphics[scale=.4]{werbung-bdi.png}
+                    \end{center}
+                }
+            }      
+        \end{bookcoverelement}
+
+        % Title on the spine
+        \begin{bookcoverelement}{center rotate}{spine}
+            \bdispine \bdiTitle
+            \hspace{9.5cm}
+            \bdiReleaseTitle
+        \end{bookcoverelement}
+    \end{bookcover}
+
+    \begin{bookcover}
+        % Remark
+   
+        % Text on the inside back cover
+        \bookcovercomponent{normal}{inside front}[8mm,8mm,8mm,8mm]{
+            
+            \vspace*{.5cm}
+            \begin{center}  
+            {\bdiinnerfont Autor:innen}\\ \vspace{20pt}
+            \end{center}
+            \vspace*{.5cm}
+            \begin{multicols}{2}
+                \begin{authordescription}[leftmargin=0pt, itemindent=.0cm]
+                    %Autorenliste einfügen
+                    \input{authors.tex}
+                \end{authordescription}
+            \end{multicols}
+        }
+
+        % Text on the inside back cover
+        \bookcovercomponent{normal}{inside back}[8mm,8mm,8mm,8mm]{
+            \vspace*{.5cm}
+            \begin{center}  
+            {\bdiinnerfont \bdiReleaseTitle\\ Sozial- und geisteswissenschaftliches Journal\vspace{20pt}}
+            \end{center}
+            \vspace*{.5cm}
+            \begin{multicols*}{2}
+                \begin{authordescription}[leftmargin=0pt, itemindent=.0cm]
+                    %impressum einfügen
+                    \input{impress.tex}
+                \end{authordescription}
+            \end{multicols*}
+            \begin{center}
+                \includegraphics[scale=0.9]{formular.eps}
+            \end{center}
+        }
+    \end{bookcover}
+
+\end{document}

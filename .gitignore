@@ -1,0 +1,12 @@
+*.indd
+.DS_Store
+*.pdf
+*.aux
+*.ent
+*.synctex.gz
+*.log
+*.xdv
+*.toc
+*.fdb_latexmk
+*.fls
+*.eps

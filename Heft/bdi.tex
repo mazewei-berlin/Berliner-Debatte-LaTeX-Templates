@@ -1,0 +1,33 @@
+\documentclass[
+    10pt, 
+    headinclude=true,
+    headings=optiontotocandhead,
+    open=any,
+	parskip=false,
+ ]{scrbook}
+
+\input{configuration.tex}
+
+
+
+%------------------Formate---------------------------------------
+\input{formats2.tex}
+%------------------Trennhinweise---------------------------------
+%\input{hyphenation.tex}
+
+\begin{document}
+%Abstand nach Paragraph
+\KOMAoptions{parskip=false}
+	%\printinunitsof{mm}{\pagevalues}
+	%\pagediagram
+	
+	%------------------Text-----------------------------------------
+    \input{toc.tex}
+    \input{editorial.tex}
+	\input{kap1.tex}
+	\input{kap2.tex}
+	\input{kap3.tex}
+	\input{kap4.tex}
+	\input{rezensionen.tex}%Kapitel 4
+	%\input{lit.tex}%anhang
+\end{document}
