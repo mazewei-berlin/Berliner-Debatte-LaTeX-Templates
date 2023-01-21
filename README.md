@@ -14,7 +14,7 @@ Initial. Die Idee dahinter ist eine Fokussierung auf die Inhalte zu
 ermöglichen und das Setzen des Textes beinahe vollständig zu
 automatisieren.
 
-LaTeXverwendet Befehle zum setzen des Textes. Jeder Befehl beginnt mit
+LaTeX verwendet Befehle zum setzen des Textes. Jeder Befehl beginnt mit
 einen \\gefolgt von einem Wort, z.B.
 
         \chapter
@@ -32,7 +32,7 @@ um jede Kapitelüberschrift im gesamten Dokument mit der Schriftart
 Warnock-Pro Regular in Schriftgröße 20pt und einzeiligem Abstand zu
 setzen.
 
-# LaTeXauf deinem Computer installieren
+# LaTeX auf deinem Computer installieren
 
 Wichtig ist eine sogenannte LaTeXDistribution herunterzuladen. Unter
 Windows empfiehlt sich Miktex[^1], unter MacOS empfiehlt sich MacTex[^2]
