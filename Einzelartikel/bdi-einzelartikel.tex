@@ -1,0 +1,58 @@
+\documentclass[
+    10pt, 
+    headinclude=true,
+    headings=optiontotocandhead,
+    open=any,
+	parskip=false,
+	twoside=false,
+ ]{scrbook}
+
+%\input{configuration.tex}
+\input{../Cover/configuration.tex}
+
+
+
+%------------------Formate---------------------------------------
+\input{formats2.tex}
+%------------------Trennhinweise---------------------------------
+%\input{hyphenation.tex}
+
+\begin{document}
+%Abstand nach Paragraph
+\KOMAoptions{parskip=false}
+	%\printinunitsof{mm}{\pagevalues}
+	%\pagediagram
+	
+	%------------------Text-----------------------------------------
+	\input{cover.tex}
+    \input{toc.tex}
+	\setcounter{page}{2}
+    \input{../Heft/editorial.tex}
+	\setcounter{page}{8}
+	\input{../Heft/kap1.tex}
+	\input{cover.tex}
+    \input{toc.tex}
+	\setcounter{page}{2}
+	\input{../Heft/editorial.tex}
+	\setcounter{page}{22}
+	\input{../Heft/kap2.tex}
+	\input{cover.tex}
+    \input{toc.tex}
+	\setcounter{page}{2}
+	\input{../Heft/editorial.tex}
+	\setcounter{page}{32}
+	\input{../Heft/kap3.tex}
+	\input{cover.tex}
+    \input{toc.tex}
+	\setcounter{page}{2}
+	\input{../Heft/editorial.tex}
+	\setcounter{page}{50}
+	\input{../Heft/kap4.tex}
+	\input{cover.tex}
+    \input{toc.tex}
+	\setcounter{page}{2}
+	\input{../Heft/editorial.tex}
+	\setcounter{page}{62}
+	\input{../Heft/rezensionen-bsp.tex}
+	
+\end{document}
