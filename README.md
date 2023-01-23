@@ -48,11 +48,16 @@ Für die Erzeugung der Berliner Debatte muss nur eine Einstellung geändert werd
 
 # Berliner Debatte in LaTeX setzen
 
-Um ein neues Heft zu setzen benötigst du alles im oberen beschriebene, das macht dich rein technisch gesehen arbeitsfähig. Außerdem benötigst du alle Vorlagen. In den folgenden Abschnitten wird beschrieben wie du mit Hilfe von LaTeX und den bereitgestellten Vorlagen ein komplettes Heft setzen und für den Druck und Webverkauf vorbereiten kannst. 
+Um ein neues Heft zu setzen benötigst du alle Programme, die weiter oben beschrieben sind, das macht dich rein technisch gesehen arbeitsfähig. Außerdem benötigst du alle Vorlagen. In den folgenden Abschnitten wird beschrieben wie du mit Hilfe von LaTeX und den bereitgestellten Vorlagen ein komplettes Heft setzen und für den Druck und Webverkauf vorbereiten kannst. 
+
+Grundsätzlich ist der Ablauf:
+1. Alle Artikel in eine eigene LaTeX Datei (name.tex) zu überführen und im Ordner "Heft" abzulegen.
+2. Die Steuerdateien für Heft, Einzelartikel und Cover zu konfigurieren
+3. Mittels LaTeX Befehl aus den Textinhalten die jeweils benötigten Dateien zu erzeugen
 
 ## Vorlagen herunterladen
 
-Alle Vorlagen sind in einem öffentlich zugänglichen Speicher abgelegt. Die Ablage in diesem Speicher unterstützt die effiziente Verbesserung der Vorlagen, da sie alle Veränderungen an den Dateien mitspeichert und eine effiziente Zusammenarbeit bei der Verbeserung der Vorlagen ermöglicht. Außerdem können so auf einfache Weise weitere Personen in den Vorlagenbesserungsprozess eingebunden werden.
+Grundsätzlich sind Vorlagen für alle Formate angelegt und müssen zunächst heruntergeladen werden. Alle Vorlagen sind in einem öffentlich zugänglichen Speicher abgelegt. Die Ablage in diesem Speicher unterstützt die effiziente Verbesserung der Vorlagen, da sie alle Veränderungen an den Dateien mitspeichert und eine effiziente Zusammenarbeit bei der Verbeserung der Vorlagen ermöglicht. Außerdem können so auf einfache Weise weitere Personen in den Vorlagenbesserungsprozess eingebunden werden.
 
 Um ein neues Heft zu erstellen gehe bitte auf [github.com](https://github.com/mazewei-berlin/Berliner-Debatte-LaTeX-Templates/#berliner-debatte-latex-templates) und lade dir alle Vorlagen herunter. 
 
@@ -73,12 +78,18 @@ Wenn du die Vorlage entpackt hast findest du einen Ordner mit folgender Struktur
 1. Cover
 2. Dokumentation
 3. Heft
+4. Einzelartikel
+5. Bilder
 
 Im Ordner "Cover" findest du alle Dateien um ein Cover für den zweiseitigen Druck zu erstellen.
 
 Im Ordner Dokumentation findet ihr eine Kopie dieses Dokuments und die Originalbilder. **Dieser Ordner ist nicht relevant für die Erstellung von Inhalten und kann ignoriert werden!**
 
 Im Ordner "Heft" findest du alle Dateien um die Inhalte des Hefts für den Druck und den Webverkauf vorzubereiten. Hier sind Dateien enthalten, die du als Beispiel für neue Beiträge nutzen kannst (kap1.tex-kap4.tex).
+
+Im Ordner Einzelartikel findest alle Dateien um einzelne Artikel mit Cover, Inhaltsverzeichnis und Editorial zu erstellen. Diese werden für den Webverkauf benötigt.
+
+Im Ordner Bilder sind alle Bilder enthalten, die im Heft gedruckt werden sollen. Es ist **zwingend notwendig** alle Bilder in diesen Ordner zu legen.
 
 ## Anlegen eines neuen Hefts - Ordner Heft
 
@@ -89,8 +100,8 @@ Um ein neues Heft anzulegen öffne im Ordner "Heft" die Datei "bdi.tex". Im Edit
 >---
 > ### Wichtig! 
 >
-> **Bitte die Datei "formats.tex" nicht bearbeiten** 
-> da diese alle Standardformatierungen enthält
+> **Bitte die Datei "formats.tex" nicht bearbeiten 
+> da diese alle Standardformatierungen enthält**
 >    
 >---
 
@@ -98,11 +109,13 @@ Um ein neues Heft anzulegen öffne im Ordner "Heft" die Datei "bdi.tex". Im Edit
 
 In der Datei "configuration.tex" werden die Grundeinstellungen für ein neues Heft vorgenommen. 
 
-![](./Dokumentation/mainsettings-new-volume.png)
-
 Bitte gib die enstprechenden Werte in die geschweifte Klammer ein.
 
-Aus den hier eingetragenen Werten ergibt sich automatisch die Ausgabe in den Kopfzeilen der einzelnen Seiten.
+![noindent](./Dokumentation/cover-basic-conf.png)
+
+Du kannst bis 5 Autoren für das Front-Cover eintragen. 
+
+Aus den hier eingetragenen Werten ergibt sich automatisch die Ausgabe in den Kopfzeilen der einzelnen Seiten. Ausserdem wird über die hier eingetragenen Werte auch die Coverseite Vorn erzeugt.
 
 ### bdi.tex
 
@@ -111,9 +124,9 @@ Hefts eingebunden.
 
 ![](./Dokumentation/Inhaltseinbindung.png)
 
-1.  toc.tex: Daraus wird das Inhaltsverzeichnis automatisch generiert. **Diese Datei muss nicht bearbeitet werden!**
+1.  toc.tex: Daraus wird das Inhaltsverzeichnis automatisch generiert. **Diese Datei darf nicht bearbeitet werden!**
 
-2.  kap1-x.tex, : darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen angelegt und mit den Heftinhalten befüllt werden**
+2.  kap1-x.tex, : darin befinden sich die einzelnen Artikel des Hefts. **Diese Dateien müssen ggf. angelegt und mit den Heftinhalten befüllt werden**
 
 ### Erzeugen der PDF Datei 
 Wenn du alle Inhalte in der Datei bdi.tex eingefügt hast musst du aus den Inhalten eine PDF Datei erzeugen. Klicke dazu im Editor auf den grünen Button im oberen Bereich. Wenn du den im Screenshot gezeigten grünen Button nimmst wird die PDF Datei gleich angezeigt.
@@ -128,8 +141,15 @@ Um einen Artikel oder eine Rezension zu einem Heft hinzuzufügen sind folgende S
 2.  Einbinden in der Datei bdi.tex, durch \input{NAME-DER-DATEI.tex}
 3.  Einfügen der Artikel-Inhalte in die neu erstellte Datei
 
+>---
+> ### Wichtig! 
+>
+> **Bevor du zum ersten Mal eine LaTeX Datei setzt lies bitte die Hinweise im Kapitel [Textsatzthemen für alle Inhalte](#textsatzthemen-für-alle-inhalte)**
+>    
+>---
+
 ## Erstellen des Editorials
-Öffne die Datei "editorial.tex" und ersetze den Inhalt mit dem Inhalt des Editorials aus der satzfertigen Datei. Achte auf Kursiv- und Fettsetzung im Word Dokument, diese müsen in LaTeX explizit angegeben werden und verlieren sich durch das Kopieren in die LaTeX Datei. (Siehe weiter unten in dieser Dokumentation)
+Öffne die Datei "editorial.tex" und ersetze den Inhalt mit dem Inhalt des Editorials aus der satzfertigen Datei. Achte auf **Kursiv- und Fettsetzung im Word Dokument**, diese müsen in LaTeX explizit angegeben werden und verlieren sich durch das Kopieren in die LaTeX Datei. (siehe Kapitel [Textsatzthemen für alle Inhalte](#textsatzthemen-für-alle-inhalte))
 
 ### Überschriften Editorial
 
@@ -175,11 +195,7 @@ Um das Cover eines neuen Heftes aus einer Vorlage zu erstellen gehe bitte in den
 
 ## Grundeinstellungen für das Cover
 
-Öffne die Datei configuration.tex und gib alle Werte für das neue Heft ein. Das Verfahren ist analog zum Erstellen eines Heftes.
-
-![noindent](./Dokumentation/cover-basic-conf.png)
-
-Du kannst bis 5 Autoren für das Front-Cover eintragen. 
+Öffne die Datei cover.tex. Du siehst nun alle Dateien, die zum Cover - Teil gehören.
 
 ## Angabe der Autoren
 Öffne die Datei authors.tex und trage die Autoren im richtigen Format ein. Das Format setzt sich zusammen aus 
@@ -192,7 +208,24 @@ Du kannst bis 5 Autoren für das Front-Cover eintragen.
 
 ## Ausgabe des Covers als PDF Datei
 
+Klicke nun auf den grünen Button im Editor. Das Cover wird automatisch aus den den am Beginn () definierten Werten und den Autoren, die du in die Datei authors.tex eingetragen hast erstellt.
 
+# Einzeldrucke erstellen
+
+Um die einzelnen Artikel für das Web zu erstellen ist etwas Handarbeit notwendig, da LaTeX normalerweise die Seitenzahlen automatisch erstellt müssen diese hier für jeden Beitrag aus dem Heft explizit angegeben werden. 
+
+Öffne die Datei bdi-Einzelartikel und gehe in den Bereich der im Screenshot unten abgebildet ist.
+
+![noindent](./Dokumentation/seitenzahlen-angeben.png)
+
+Hier musst du
+1. das Cover für jeden Einzeldruck einbinden. Das einseitige Webcover ist in der Datei cover.tex.
+2. Das Inhaltsverzeichnis für jeden Einzeldruck einbinden. Das Inhaltsverzeichnis ist in der Datei toc.tex.
+3. Die Seitenzahl für das Editorial explizit setzen durch \setcounter{page}{SEITENZAHL AUS GESAMTHEFT}
+4. Das Editorial in jeden Einzeldruch einbinden. Das Editorial befindet sich im Ordner Heft (../Heft/editorial.tex)
+5. Die Seitenzahl für die Artikel explizit setzen durch \setcounter{page}{SEITENZAHL AUS GESAMTHEFT}
+
+Diesen Angaben musst du für jedes Artikelpaket, dass du erhalten möchtest angeben. Die einzelnen Abschnitte werden dabei nicht dupliziert sondern aus dem Heft Ordner eingebunden. 
 
 # Textsatzthemen für alle Inhalte
 Im Folgenden werden generelle Regeln für den Textsatz im BDI LaTeX Style erläutert. Diese gelten für alle Inhalte!
@@ -323,16 +356,16 @@ Die Zeichen, die von LaTeX als Befehl interpretiert werden und wie du sie in ein
 
 | Bezeichnung            | Ausgabe | LaTeX-Code (außerhalb von Formeln) |
 |------------------------|---------|------------------------------------|
-| Rückstrich (Backslash) | \       | \textbackslash                     |
-| Geschweifte Klammern   | {…}     | \{…\}                              |
-| Dollarzeichen          | $       | \$                                 |
-| Kaufmanns-Und          | &       | \&                                 |
-| Raute                  | #       | \#                                 |
-| Grad                   | °       | \textdegree                        |
-| Zirkumflex             | ^       | \^{}                               |
-| Unterstrich            | _       | \_                                 |
-| Tilde                  | ~       | \textasciitilde oder \~{}          |
-| Prozentzeichen         | %       | \%                                 |
+| Rückstrich (Backslash) | \       | \\textbackslash                     |
+| Geschweifte Klammern   | {…}     | \\{…\}                              |
+| Dollarzeichen          | $       | \\$                                 |
+| Kaufmanns-Und          | &       | \\&                                 |
+| Raute                  | #       | \\#                                 |
+| Grad                   | °       | \\textdegree                        |
+| Zirkumflex             | ^       | \\^{}                               |
+| Unterstrich            | _       | \\_                                 |
+| Tilde                  | ~       | \\textasciitilde oder \~{}          |
+| Prozentzeichen         | %       | \\%                                 |
 
 ## Falscher Befehl - Syntax Fehler
 Wenn ihr beginnt LaTeX zu schreiben kann es vorkommen, dass ihr Befehle falsch schreibt, z.B. statt \chapter schreibt ihr \Chapter. Das führt dazu, dass LaTeX nicht weiß was gemeint ist und die Übersetzung in das PDF Dokument endet mit einem Fehler.
