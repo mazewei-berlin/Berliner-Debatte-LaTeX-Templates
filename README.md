@@ -179,6 +179,13 @@ Nutze die Vorlage "rezensionen.tex" und übertrage die Inhalte in diese Datei. A
 
 In der Vorlage findest du alle notwendigen Informationen um einen normalen Text ohne Bilder und Tabellen richtig zu setzen.
 
+Um eine rezension in der rechten Spalte zu beginnen setze
+
+```
+        \vfill\null\columnbreak
+```
+vor die Überschrift.
+
 ### Überschriften Rezensionen
 
         \bdirezension{Sonia Combe}{Loyal um jeden Preis.\smallskip „Linientreue Dissidenten“ im Sozialismus}{Ulrich Busch}
