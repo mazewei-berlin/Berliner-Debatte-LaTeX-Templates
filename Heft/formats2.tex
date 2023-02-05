@@ -1,4 +1,24 @@
 %
+% Barrierefreie PDF
+%
+%Metadaten aus bdi.mpxdata Datei in Dokument einfügen
+\usepackage[a-3u]{pdfx}
+
+%\usepackage[tagged]{accessibility}
+%Struktur im PDF speichern
+\usepackage[highstructure]{accessibility}
+
+%Einbetten der Schriftarten 
+\usepackage{luacode}
+\begin{luacode}
+    local function embedfull(tfmdata)
+    tfmdata.embedding = "full"
+    end
+    
+    luatexbase.add_to_callback("luaotfload.patch_font", embedfull, "embedfull")
+\end{luacode}
+
+%
 % unterer randausgleich
 %
 \flushbottom
@@ -9,7 +29,19 @@
 \usepackage{microtype}
 %\usepackage[showframe]{geometry}
 %\usepackage{layouts}
-\usepackage{csquotes}
+\usepackage[german=quotes]{csquotes}
+
+%
+%text durchstreichen
+%
+\usepackage{soulutf8}
+
+%
+% Formatierung von URLs und interner Verlinkung der PDF
+%
+%\usepackage[urlcolor=black]{hyperref}
+\usepackage{hyperref}
+\PassOptionsToPackage{urlcolor={black}}{hyperref}
 
 %\usepackage{showframe}% zum Anzeigen des Seitenlayouts
 % optischer Randausgleich/microtypografie
@@ -36,16 +68,15 @@
 \renewcommand*\chapterformat{}
 \renewcommand*\sectionformat{}
 \RedeclareSectionCommand[
-  %toclinefill=\TOCLineLeaderFill,
-  %tocnumwidth=0pt,
-  afterindent=false, 
-  %beforeskip=0pt,
-  afterskip=1\baselineskip,
-  beforeskip=.5\baselineskip,
-  tocentrynumberformat=\gobbleentrynumber
+%toclinefill=\TOCLineLeaderFill,
+%tocnumwidth=0pt,
+afterindent=false, 
+%beforeskip=0pt,
+afterskip=1\baselineskip,
+beforeskip=.5\baselineskip,
+tocentrynumberformat=\gobbleentrynumber
 ]{chapter}
 \newcommand*\gobbleentrynumber[1]{}
-
 
 % Zweispaltigkeit
 \usepackage{multicol}
@@ -63,11 +94,11 @@
 \usepackage{fontspec}
 \setmainfont{WarnockPro-Regular.otf}
 [
-    BoldFont = WarnockPro-Bold.otf,
-    ItalicFont = WarnockPro-It.otf,
-    BoldItalicFont = WarnockPro-SemiboldIt.otf
+BoldFont = WarnockPro-Bold.otf,
+ItalicFont = WarnockPro-It.otf,
 ]
-\newfontfamily{\chapterfont}{WarnockPro-Regular.otf}
+\newfontfamily{\chapterfont}{WarnockPro-Bold.otf}
+\newfontfamily{\sectionfont}{WarnockPro-Bold.otf}
 
 % Heft Titel über Inhaltsverzeichnis
 \newcommand{\bdititle}[1]{\huge #1}
@@ -95,7 +126,7 @@
 %\RedeclareSectionCommands[
 %beforeskip=4em,
 %runin=true,
-%afterskip=4em
+%afterskip=40em
 %]{paragraph,subparagraph}
 
 % Konfigurieren des Abstandes nach der Artikel zum eigentlichen Text
@@ -104,54 +135,54 @@
 % Kommando für Editorialüberschrift
 % Argument: Autor(en)
 \newcommand{\bdieditorial}[1]{
-	\fancyhead[RE]{\bdiReleaseTitle} % TODO(Aurel): Into command
-	\fancyhead[LO]{Editorial}
-
-	\chapter[
-	head={
-		Editorial
-	},
-	tocentry={
-		\textit{#1}\\
-		Editorial
-	}
-	] {\bigskip{\fontsize{14}{0}\selectfont {#1}}\\\bigskip Editorial}%
-	\vspace{\titlespaceAfter}
+    \fancyhead[RE]{\bdiReleaseTitle} % TODO(Aurel): Into command
+    \fancyhead[LO]{Editorial}
+    
+    \chapter[
+    head={
+        Editorial
+    },
+    tocentry={
+        \textit{#1}\\
+        Editorial
+    }
+    ] {\bigskip{\fontsize{14}{0}\selectfont {#1}}\\\bigskip Editorial}%
+    \vspace{\titlespaceAfter}
 }
 
-% Kommandos für Chapters: Setzt Author, Titel und Untertitel und den header automatisch.
+% Kommando für Chapters: Setzt Author, Titel und Untertitel und den header automatisch.
 % erstes Argument: Autor(en)
 % zweites Argument: Titel
 % optionales drittes Argument: formatierter Titel: falls extra Formatierung nötig ist
 % optionales viertes Argument: Untertitel
 % NOTE: nicht genutzte optionale Argumente einfach leer lassen!
 \newcommand{\bdichapter}[4]{
-	\fancyhead[RE]{#1}
-	\fancyhead[LO]{\leftmark}
-
-	\chapter[
-	head={
-		{#2}
-	},
-	tocentry={
-		\textit{#1}\\
-		{#2}
-	}
-	] {\bigskip{\fontsize{14}{0}\selectfont {#1}}\\\bigskip {%
-			% Falls kein extra formatierter Titel gegeben wird, nutze den
-			% einfachen Titel (Argument 2)
-			\ifx \relax#3\relax%
-				#2%
-			\else%
-				#3%
-			\fi%
-	}}%
-	% Untertitel, falls gegeben
-	\ifx \relax#4\relax%
-	\else%
-		{\fontsize{14}{0}\selectfont #4}
-	\fi%
-	%\vspace{\titlespaceAfter}
+    \fancyhead[RE]{#1}
+    \fancyhead[LO]{\leftmark}
+    
+    \chapter[
+    head={
+        {#2}
+    },
+    tocentry={
+        \textit{#1}\\
+        {#2}
+    }
+    ] {\bigskip{\fontsize{14}{0}\selectfont {#1}}\\ {%
+            % Falls kein extra formatierter Titel gegeben wird, nutze den
+            % einfachen Titel (Argument 2)
+            \ifx \relax#3\relax%
+            #2%
+            \else%
+            #3%
+            \fi%
+    }}%
+    % Untertitel, falls gegeben
+    \ifx \relax#4\relax%
+    \else%
+    {\fontsize{14}{0}\selectfont #4}\bigskip
+    \fi%
+    %\vspace{\titlespaceAfter}
 }
 
 % Vor dem ersten Aufruf ist \newpage nötig
@@ -160,29 +191,29 @@
 % drittes Argument: Rezensiert von
 % Beispiel:
 %\bdirezension{Anne Hartmann,\\Reinhard Müller (Hg.)}{Tribunale als Trauma}{Wladislaw Hedeler}
-\usepackage{etoolbox}
+%\usepackage{etoolbox}
 \newcommand{\bdirezension}[3]{
-	\fancyhead[RE]{Besprechungen und Rezensionen}%
-	\fancyhead[LO]{\bdiReleaseTitle}%
-	{
-		% NOTE: auskommentieren um es auf der nächsten Halbseite zu starten
-		%\vfill\null\columnbreak
-		\vspace{\titlespaceAfter}
-		\chapter[
-		head={
-			{#2}
-		},
-		tocentry={
-			{#1}:\\
-			{#2}\\
-			Rezensiert von \textit{#3}
-		}
-		] {\bigskip{\fontsize{14}{0}\selectfont {#1}:}\\\bigskip {%
-				{#2}\\%
-				{\fontsize{12}{0}\selectfont Rezensiert von {#3}}
-		}}%
-	}%
-	\vspace{.5\titlespaceAfter}
+    \fancyhead[RE]{Besprechungen und Rezensionen}%
+    \fancyhead[LO]{\bdiReleaseTitle}%
+    {
+        % NOTE: auskommentieren um es auf der nächsten Halbseite zu starten
+        %\vfill\null\columnbreak
+        \vspace{\titlespaceAfter}
+        \chapter[
+        head={
+            {#2}
+        },
+        tocentry={
+            {#1}:\\
+            {#2}\\
+            Rezensiert von \textit{#3}
+        }
+        ] {\bigskip{\fontsize{14}{0}\selectfont {#1}:}\\\bigskip {%
+                {#2}\\%
+                {\fontsize{12}{0}\selectfont Rezensiert von {#3}}
+        }}%
+    }%
+    \vspace{.5\titlespaceAfter}
 }
 
 % Zeilenabstand Blocksatz
@@ -206,11 +237,11 @@
 
 % head über einem neuen Kapitel
 \fancypagestyle{plain}{%
-  \fancyhf{}%
-  \fancyhead[LO]{\bdiReleaseTitle}
-  \fancyhead[RE]{\bdiReleaseTitle}
-
-  \renewcommand{\headrulewidth}{1pt}% Line at the header invisible
+    \fancyhf{}%
+    \fancyhead[LO]{\bdiReleaseTitle}
+    \fancyhead[RE]{\bdiReleaseTitle}
+    
+    \renewcommand{\headrulewidth}{1pt}% Line at the header invisible
 }
 
 %
@@ -237,10 +268,10 @@
 \makeatletter
 \newenvironment{bibdescription}{%
     \@nameuse{fontitem\romannumeral\the\@itemdepth}
-
-	\begin{description}[leftmargin=0pt, itemindent=.4cm, nosep]
-}{%
-	\end{description}
+    
+    \begin{description}[leftmargin=0pt, itemindent=.4cm, nosep]
+    }{%
+    \end{description}
 }
 \makeatother
 \newcommand{\fontitem}{\footnotesize}
@@ -250,11 +281,13 @@
 % BILDER
 %
 \usepackage{graphicx}
+\graphicspath{../Bilder/}
+
 \usepackage[
-    labelformat=empty,
-    format=plain,
-    labelformat=simple,
-    font=it,
+labelformat=empty,
+format=plain,
+labelformat=simple,
+font=it,
 ]{caption}
 \counterwithout{figure}{chapter}
 \usepackage{wrapfig}
@@ -265,24 +298,20 @@
 \usepackage{longtable}
 \usepackage{array}
 \usepackage{vcell}
-\usepackage{tabularray}
-%Ausgabe wenn Tabelle über mehrere Seiten geht
-\DefTblrTemplate{contfoot-text}{default}{Weiter auf der nächsten Seite }
-\DefTblrTemplate{conthead-text}{default}{(Fortsetzung von vorheriger Seite)}
 
 %
 % GEOMETRIE der Seiten
 %
 \usepackage{geometry}
 \geometry{
-	twoside,
-	paperwidth=162mm,
-	paperheight=227mm,
+    twoside,
+    paperwidth=162mm,
+    paperheight=227mm,
     width=137mm,
-	top=20mm,
-	bottom=12mm,
+    top=20mm,
+    bottom=12mm,
     inner=13mm,
     outer=12mm,
     %height=195mm,
-	%showframe=true,
+    %showframe=true,
 }
